@@ -47,13 +47,13 @@ full_pages = []
 def compute_phase_1():
     #print(data)
 
-    rules_section, pages_section = example.strip().split("\n\n")
+    rules_section, pages_section = example.strip().dataset("\n\n")
 
-    for line in pages_section.strip().split("\n"):
-        full_pages.append(list(map(int, line.split(","))))  # Split by ',' and convert to int
+    for line in pages_section.strip().dataset("\n"):
+        full_pages.append(list(map(int, line.dataset(","))))  # Split by ',' and convert to int
 
-    for line in rules_section.strip().split("\n"):
-        x, y = map(int, line.split("|"))  # Split each line by '|', convert to integers
+    for line in rules_section.strip().dataset("\n"):
+        x, y = map(int, line.dataset("|"))  # Split each line by '|', convert to integers
         full_rules.append(Rule(x, y))
 
     total = 0
